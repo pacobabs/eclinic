@@ -1,6 +1,6 @@
 # Bigpharma
 
-You can see it <a href="https://ingequip.netlify.app">here</a>
+You can see it <a href="https://samaclinic.netlify.app">here</a>
 
 Made with NextJS ReactJS and TailwindCSS.
 
