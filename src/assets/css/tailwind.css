@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap');
+@tailwind base;
+body {
+  margin: 0;
+}
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+}
+
+@layer utilities {
+  .contain {
+    contain: style layout paint;
+  }
+  .min-w-main {
+    min-width: 110ch;
+  }
+  .bg-blur {
+    backdrop-filter: blur(2px);
+  }
+  .font-cursive {
+    --CRSV: 1;
+  }
+  .font-casual {
+    --CASL: 1;
+  }
+  .font-mono {
+    --MONO: 1;
+  }
+  .font-slant-1 {
+    --slnt: -12;
+  }
+}
+
+@layer base {
+  :root {
+    /* Start with axis defaults. Exclude weight, which is better controlled via the usual font-weight CSS property */
+    --MONO: 0; /* Monospace    */
+    --CASL: 0; /* Casual       */
+    --slnt: 0; /* Upright      */
+    --CRSV: 0; /* Auto Cursive */
+  }
+  *,
+  *:before,
+  *:after {
+    font-variation-settings: 'MONO' var(--MONO), 'CASL' var(--CASL), 'slnt' var(--slnt), 'CRSV' var(--CRSV);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  html {
+    @apply font-crimson;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-recursive;
+  }
+
+  a {
+    @apply cursor-pointer;
+  }
+}
